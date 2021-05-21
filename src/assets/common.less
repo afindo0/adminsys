@@ -1,0 +1,289 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #303133;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+        "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    background-color: #f3f3f3;
+}
+
+.el-form-item {
+    // margin-right: 93px !important;
+    margin-bottom: 25px;
+}
+.el-input, .el-input-number {
+    width: 250px;
+}
+
+// 重置分页插件背景色
+.el-pagination.is-background .el-pager li {
+    &:hover {
+        color: #ebb563;
+    }
+    &.active {
+        background-color: #ebb563;
+        &:hover {
+            color: #ffffff;
+        }
+    }
+}
+#app {
+    height: 100%;
+}
+.m-pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 25px 25px 25px;
+}
+.m-body {
+    position: absolute;
+    top: 69px + 40px;
+    left: 235px;
+    bottom: 15px;
+    right: 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    // padding: 20px 30px;
+}
+.m-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+.m-form {
+    padding: 0 0 10px 0;
+    background-color: #f3f3f3;
+    .el-form {
+        padding: 25px 25px 0 25px;
+        background-color: #ffffff;
+    }
+    .el-form-item:last-child {
+        margin-left: -10px;
+        margin-bottom: 5px;
+        button {
+            margin-bottom: 10px;
+        }
+        button:first-child {
+            margin-left: 10px;
+        }
+    }
+}
+.m-form-page {
+    padding: 80px 0 80px 80px;
+}
+.m-table {
+    margin: 25px;
+}
+.add-or-edit-cont {
+    padding: 40px;
+}
+// 用打印时候隐藏显示
+.m-print {
+    display: none;
+}
+@media print {
+    .m-no-print {
+        display: none;
+    }
+    body {
+        visibility: hidden;
+    }
+    .m-print {
+        display: block;
+        visibility: visible;
+        height: 100%;
+    }
+}
+
+.m-blue {
+    background: #1890fd;
+    color: #ffffff;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: rgba(24, 144, 253, 0.7);
+        color: #ffffff;
+        border-color: rgba(24, 144, 253, 0.4);
+        outline: 0;
+    }
+}
+.m-light-blue {
+    border-color: #1890fd;
+    color: #1890fd;
+    background: #ffffff;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: rgba(24, 144, 253, 0.7);
+        border-color: rgba(24, 144, 253, 0.4);
+    }
+}
+.m-orange {
+    background: #f39700;
+    color: #ffffff;
+    border-color: #f39700;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: rgba(243, 151, 0, 0.7);
+        color: #ffffff;
+        border-color: rgba(243, 151, 0, 0.4);
+        outline: 0;
+    }
+}
+.m-light-orange {
+    border-color: #f39700;
+    color: #f39700;
+    background: #ffffff;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: #ffffff;
+        color: rgba(243, 151, 0, 0.7);
+        border-color: rgba(243, 151, 0, 0.4);
+        outline: 0;
+    }
+}
+.m-red {
+    background: #d10303;
+    color: #ffffff;
+    border-color: #d10303;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: rgba(209, 3, 3, 0.7);
+        color: #ffffff;
+        border-color: rgba(209, 3, 3, 0.4);
+        outline: 0;
+    }
+}
+.m-black {
+    color: #ffffff;
+    background: #2c2838;
+    border-color: #2c2838;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: rgba(44, 40, 56, 0.7);
+        color: #ffffff;
+        border-color: rgba(44, 40, 56, 0.4);
+        outline: 0;
+    }
+}
+.m-add {
+    color: #ffffff;
+    background: #2c2838;
+    border-color: #2c2838;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: rgba(44, 40, 56, 0.7);
+        color: #ffffff;
+        border-color: rgba(44, 40, 56, 0.4);
+        outline: 0;
+    }
+}
+.m-edit,
+.m-reset,
+.m-open {
+    border-color: #999999;
+    color: #666666;
+    background: #ffffff;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: #ffffff;
+        color: rgba(102, 102, 102, 0.7);
+        border-color: rgba(102, 102, 102, 0.4);
+    }
+}
+.m-import,
+.m-export,
+.m-confirm,
+.m-save {
+    border-color: #1890fd;
+    color: #1890fd;
+    background: #ffffff;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: rgba(24, 144, 253, 0.7);
+        border-color: rgba(24, 144, 253, 0.4);
+    }
+}
+.m-look {
+    background: #1890fd;
+    color: #ffffff;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: rgba(24, 144, 253, 0.7);
+        color: #ffffff;
+        border-color: rgba(24, 144, 253, 0.4);
+        outline: 0;
+    }
+}
+.m-del {
+    background: #d10303;
+    color: #ffffff;
+    border-color: #d10303;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: rgba(209, 3, 3, 0.7);
+        color: #ffffff;
+        border-color: rgba(209, 3, 3, 0.4);
+        outline: 0;
+    }
+}
+.m-new-print {
+    border-color: #f39700;
+    color: #f39700;
+    background: #ffffff;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: #ffffff;
+        color: rgba(243, 151, 0, 0.7);
+        border-color: rgba(243, 151, 0, 0.4);
+        outline: 0;
+    }
+}
+.m-search {
+    background: #f39700;
+    color: #ffffff;
+    border-color: #f39700;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: rgba(243, 151, 0, 0.7);
+        color: #ffffff;
+        border-color: rgba(243, 151, 0, 0.4);
+        outline: 0;
+    }
+}
+// notify提示框的logo位置样式
+.el-notification__icon {
+    margin-top: 10px;
+}
+// 去除button 为text格式的时候 padding导致的 高度过高问题
+.el-button--text {
+    padding: 0;
+}

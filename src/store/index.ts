@@ -1,4 +1,6 @@
 import { createStore } from 'vuex'
+import app from './app'
+import login from './login'
 
 export default createStore({
   state: {
@@ -8,5 +10,7 @@ export default createStore({
   actions: {
   },
   modules: {
+    app,
+    login
   }
 })

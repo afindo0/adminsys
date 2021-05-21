@@ -1,20 +1,46 @@
+import video from '@/router/modules/video.ts'
+
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
+import Abstract from '@/views/common/abstract.vue'
+
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: '/',
+    redirect: '/Login'
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: '/login',
+    name: 'Login',
+    meta: {
+      keepAlive: false,
+      noshow: true,
+    },
+    component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue')
+  },
+  {
+    path: '/index',
+    name: 'Home',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Index.vue'),
+    children: [
+      {
+        path: 'videoManage',
+        name: '视频管理',
+        meta: {
+          level: 1,
+        },
+        component: Abstract,
+        children: video,
+        redirect: 'videoManage/videolist',
+      },
+    ]
+  },
+  // {
+  //   path: '/about',
+  //   name: 'About',
+  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  // }
 ]
 
 const router = createRouter({

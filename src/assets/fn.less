@@ -1,0 +1,40 @@
+// 设置水平
+.setFlexJustify(@justify: center) {
+    display: flex;
+    justify-content: @justify;
+}
+// 设置垂直
+.setFlexAlign(@align: center) {
+    display: flex;
+    align-items: @align;
+}
+
+// 默认垂直水平居中
+.setCenter(@direction: row, @justify: center, @align: center) {
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+    flex-direction: @direction;
+}
+
+// 设置全屏背景色
+.setFullScreenBgColor (@bc) {
+    &:before {
+        content: '';
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: @bc;
+    }
+}
+.setcenter(@direction, @content, @items) {
+	display: -webkit-flex;
+	/* Safari */
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @content;
+	align-items: @items;
+}
