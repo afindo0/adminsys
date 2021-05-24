@@ -10,41 +10,45 @@
     </el-breadcrumb>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { defineComponent, computed } from 'vue'
+import { useStore } from 'vuex'
 
-export default {
-  computed: {
-    ...mapGetters(['breadcrumbList']),
-    firstBreadcrumb () {
-      return this.breadcrumbList[0]
-    },
-    centerBreadcrumb () {
-      const length = this.breadcrumbList.length
-      // const breadcrumbList = JSON.parse(
-      //     JSON.stringify(this.breadcrumbList),
-      // )
+export default defineComponent({
+  setup () {
+    const store = useStore()
+
+    const firstBreadcrumb = computed(() => {
+      return store.state.pagesBreadcrumb.breadcrumbList[0]
+    })
+
+    const centerBreadcrumb = computed(() => {
+      const length = store.state.pagesBreadcrumb.breadcrumbList.length
       if (length >= 3) {
-        return this.breadcrumbList.slice(1, -1)
+        return store.state.pagesBreadcrumb.breadcrumbList.slice(1, -1)
       }
       return null
-    },
-    lastBreadcrumb () {
-      const length = this.breadcrumbList.length
+    })
+
+    const lastBreadcrumb = computed(() => {
+      const length = store.state.pagesBreadcrumb.breadcrumbList.length
       if (length > 1) {
-        return this.breadcrumbList[length - 1]
+        return store.state.pagesBreadcrumb.breadcrumbList[length - 1]
       }
       return null
-    }
+    })
+
+    return { firstBreadcrumb, centerBreadcrumb, lastBreadcrumb }
   }
-}
+})
+
 </script>
 <style lang='less' scoped>
 .breadcrumb {
     position: absolute;
-    top: 69px;
-    left: 235px;
-    right: 15px;
+    top: 60px;
+    left: 210px;
+    right: 5px;
     height: 40px;
-    line-height: 30px;
+    line-height: 40px;
 }
 </style>

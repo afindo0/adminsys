@@ -4,18 +4,21 @@
   <router-view/>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { defineComponent, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
 
 export default defineComponent({
   setup (props:any) {
-    // const store = useStore()
-    // const router = useRouter()
+    const store = useStore()
+    const route = useRoute()
 
-    // watch(() => , (nval, oval) => {
-    //   console.log('nval = ' + nval + ', oval = ' + oval)
-    // })
+    watch(() => route.name, (nval, oval) => {
+      console.log('store1111', store)
+      console.log('监听到变化', nval, oval)
+      console.log('props33333', props)
+      store.commit('setBreadcrumb', route)
+    })
 
     return {
 
@@ -25,28 +28,5 @@ export default defineComponent({
 })
 </script>
 <style lang="less">
-html, body{
-  padding: 0px;
-  margin: 0px;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import './assets/common.less';
 </style>

@@ -1,3 +1,4 @@
+import ceshi from '@/router/modules/ceshi.ts'
 import video from '@/router/modules/video.ts'
 
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
@@ -21,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/index',
-    name: 'Home',
+    name: '首页',
     component: () => import(/* webpackChunkName: "about" */ '../views/Index.vue'),
     children: [
       {
@@ -33,6 +34,16 @@ const routes: Array<RouteRecordRaw> = [
         component: Abstract,
         children: video,
         redirect: 'videoManage/videolist',
+      },
+      {
+        path: 'ceshiManage',
+        name: '测试管理',
+        meta: {
+          level: 1,
+        },
+        component: Abstract,
+        children: ceshi,
+        redirect: 'ceshiManage/ceshilist',
       },
     ]
   },

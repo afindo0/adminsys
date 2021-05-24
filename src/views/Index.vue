@@ -2,7 +2,9 @@
 <Loading :loading="loading"/>
   <el-container>
 
-    <el-header><Mheader :userinfo="info.userinfo" :simpleRoles="simpleRoles"  /></el-header>
+    <el-header height="55px">
+      <Mheader :userinfo="info.userinfo" :simpleRoles="simpleRoles"  />
+    </el-header>
     <el-container>
       <el-aside width="200px">
         <Navbar
@@ -11,8 +13,8 @@
             :menus="menus"
         />
       </el-aside>
-      <el-main>
-        <!-- <Breadcrumb></Breadcrumb> -->
+      <el-main class="el-main">
+        <Breadcrumb></Breadcrumb>
         <div class="m-body">
             <router-view class="router-body"></router-view>
         </div>
@@ -35,7 +37,7 @@ export default defineComponent({
   components: {
     Loading,
     Mheader,
-    // Breadcrumb,
+    Breadcrumb,
     Navbar
   },
   setup () {
@@ -88,7 +90,6 @@ export default defineComponent({
     background-color: #B3C0D1;
     color: #333;
     text-align: center;
-    line-height: 60px;
   }
 
   .el-aside {
@@ -99,9 +100,6 @@ export default defineComponent({
   }
 
   .el-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
+    padding: 0px;
   }
 </style>

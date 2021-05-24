@@ -1,25 +1,17 @@
 <template>
     <div>
-        <Form class="m-form" ref="form" />
-        <Table class="m-table"
-               :dataSource="videoList"
-               @reload="getvideoList"
-               />
-        <!-- <Pagination :total="videoListtotal"
-                    :currentPage="pageInfo.currentPage"
-                    @size-change="handleSizeChange"
-                    @current-change="handleCurrentChange" /> -->
+       11111111111111111111111111111测试页11111111111111111111111111
     </div>
 </template>
 <script lang="ts">
 // import { mapGetters, mapActions } from 'vuex'
-import Form from './common/videolist-form.vue'
-import Table from './common/videolist-table.vue'
+// import Form from './common/videolist-form.vue'
+// import Table from './common/videolist-table.vue'
 
 export default {
   components: {
-    Form,
-    Table
+    // Form,
+    // Table
     // Pagination: () => import('@/components/Pagination.vue')
   }
   // data () {

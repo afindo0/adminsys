@@ -98,10 +98,9 @@ export default {
     top: 0;
     left: 0;
     box-sizing: border-box;
-    width: 220px;
+    width: 201px;
     height: 100%;
     padding-top: 55px;
     border-right: 1px solid #dedede;
-    overflow-y: auto;
 }
 </style>
