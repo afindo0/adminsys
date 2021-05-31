@@ -52,7 +52,6 @@ export default {
   },
   mutations: {
     updateUserInfo (state: any, payload: any) {
-      console.log('payload', payload)
       state.userInfo = payload.data
     },
   }

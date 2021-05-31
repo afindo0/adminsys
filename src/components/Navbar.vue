@@ -9,11 +9,11 @@
         :unique-opened="false"
         :default-openeds="openMenuList"
     >
-        <template v-for="(route, index) in menus">
+        <template v-for="(route, index) in menus" :key="index">
             <template v-if="route.children && route.children.length !== 0">
                 <el-submenu
                     :key="index"
-                    :index="index"
+                    :index="`${index}`"
                 >
                     <template v-slot:title>
                         <i class="el-icon-menu"></i>

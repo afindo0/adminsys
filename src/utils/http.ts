@@ -90,7 +90,6 @@ export const request = async ({ commit, responseType, ...config }: any) => {
     const { response } = error
     let msg
     let statusCode
-    console.log('error', 123)
     if (response && response instanceof Object) {
       const { data, statusText } = response
       statusCode = response.status

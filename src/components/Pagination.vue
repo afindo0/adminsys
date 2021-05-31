@@ -13,8 +13,11 @@
     </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   props: {
     total: {
       type: Number,
@@ -22,15 +25,19 @@ export default {
     },
     currentPage: Number
   },
-  methods: {
-    handleSizeChange (val) {
-      this.$emit('size-change', val)
-    },
-    handleCurrentChange (val) {
-      this.$emit('current-change', val)
+  setup (props, { emit }) {
+    function handleSizeChange (val:any) : any {
+      emit('size-change', val)
+    }
+    function handleCurrentChange (val:any) : any {
+      emit('current-change', val)
+    }
+    return {
+      handleSizeChange,
+      handleCurrentChange
     }
   }
-}
+})
 </script>
 
 <style lang="less" scoped>

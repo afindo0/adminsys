@@ -1,0 +1,113 @@
+.setTopLine(@c: #C7C7C7) {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1PX;
+    border-top: 1PX solid @c;
+    color: @c;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}
+
+.setBottomLine(@c: #C7C7C7) {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1PX;
+    border-bottom: 1PX solid @c;
+    color: @c;
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
+}
+
+.setLeftLine(@c: #C7C7C7) {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1PX;
+    bottom: 0;
+    border-left: 1PX solid @c;
+    color: @c;
+    transform-origin: 0 0;
+    transform: scaleX(0.5);
+}
+
+.setRightLine(@c: #C7C7C7) {
+    content: ' ';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1PX;
+    bottom: 0;
+    border-right: 1PX solid @c;
+    color: @c;
+    transform-origin: 100% 0;
+    transform: scaleX(0.5);
+}
+
+// 设置向右箭头
+.setAllowRight(@w: 5px,@r: 5px, @c: #c8c8cd ) {
+    border: 2px solid @c;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    content: ' ';
+    top: 50%;
+    right: @r;
+    position: absolute;
+    width: @w;
+    height: @w;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+}
+// 设置向下箭头
+.setAllowBottom(@w: 5px,@r: 5px, @c: #c8c8cd ) {
+    border: 2px solid @c;
+    border-left-width: 0;
+    border-top-width: 0;
+    content: ' ';
+    top: 50%;
+    right: @r;
+    position: absolute;
+    width: @w;
+    height: @w;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+}
+
+// 设置水平
+.setFlexJustify(@justify: center) {
+    display: flex;
+    justify-content: @justify;
+}
+// 设置垂直
+.setFlexAlign(@align: center) {
+    display: flex;
+    align-items: @align;
+}
+
+// 默认垂直水平居中
+.setCenter(@justify: center, @align: center, @direction: row) {
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+    flex-direction: @direction;
+}
+
+// 设置全屏背景色
+.setFullScreenBgColor (@bc) {
+    &:before {
+        content: '';
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: @bc;
+    }
+}

@@ -14,9 +14,6 @@ export default defineComponent({
     const route = useRoute()
 
     watch(() => route.name, (nval, oval) => {
-      console.log('store1111', store)
-      console.log('监听到变化', nval, oval)
-      console.log('props33333', props)
       store.commit('setBreadcrumb', route)
     })
 

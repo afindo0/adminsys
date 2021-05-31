@@ -102,7 +102,6 @@ import cookie from './cookie'
  * @param {*} error
  */
 export const catchError = (error: any) => {
-  console.log('this', this)
   if (error.response) {
     switch (error.response.status) {
       case 403:
@@ -223,7 +222,7 @@ export const catchError = (error: any) => {
 //   if (console.hasOwnProperty(level)) {
 //     // console[level](...record)
 //   } else {
-//     console.log(level, ...record)
+
 //   }
 // }
 // const modulesId = 32
@@ -331,18 +330,18 @@ export const catchError = (error: any) => {
 //     sound(message)
 //   }
 // }
-// /**
-//  * 去除对象中的空属性
-//  *
-//  */
-// export const removeEmpty = obj => {
-//   Object.keys(obj).map(key => {
-//     if (obj[key] === '' || obj[key] === null) {
-//       delete obj[key]
-//     }
-//   })
-//   return obj
-// }
+/**
+ * 去除对象中的空属性
+ *
+ */
+export const removeEmpty = (obj: any) => {
+  Object.keys(obj).map(key => {
+    if (obj[key] === '' || obj[key] === null) {
+      delete obj[key]
+    }
+  })
+  return obj
+}
 // /**
 //  * 城市数据重组(适应element中的Cascader 级联选择器)
 //  *

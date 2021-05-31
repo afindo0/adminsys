@@ -1,5 +1,5 @@
-import ceshi from '@/router/modules/ceshi.ts'
-import video from '@/router/modules/video.ts'
+import ceshi from '@/router/modules/ceshi'
+import video from '@/router/modules/video'
 
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Abstract from '@/views/common/abstract.vue'
@@ -23,6 +23,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/index',
     name: '首页',
+    redirect: '/index/videoManage/videolist',
     component: () => import(/* webpackChunkName: "about" */ '../views/Index.vue'),
     children: [
       {

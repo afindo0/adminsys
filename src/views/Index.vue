@@ -1,5 +1,5 @@
 <template>
-<Loading :loading="loading"/>
+<!-- <Loading :loading="loading"/> -->
   <el-container>
 
     <el-header height="55px">
@@ -24,18 +24,18 @@
 </template>
 
 <script lang="ts">
-import Loading from '@/components/Loading.vue'
+// import Loading from '@/components/Loading.vue'
 import Mheader from '@/components/ModHeader.vue'
 import Breadcrumb from '@/components/Breadcrumb.vue'
 import Navbar from '@/components/Navbar.vue'
 
 import { defineComponent, reactive, computed } from 'vue'
 import { useStore } from 'vuex'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 export default defineComponent({
   components: {
-    Loading,
+    // Loading,
     Mheader,
     Breadcrumb,
     Navbar
@@ -43,6 +43,7 @@ export default defineComponent({
   setup () {
     const store = useStore()
     const router = useRouter()
+    const route = useRoute()
 
     const info:any = reactive({
       userinfo: {}
@@ -79,8 +80,23 @@ export default defineComponent({
     if (router.options.routes[2].children && router.options.routes[2].children.length > 0) {
       menus = router.options.routes[2].children
     }
+    // 设置默认列表
+    const activeMenu = route.name
+    // 默认下拉列表
+    const openMenuList = computed(() => {
+      let list = [0, 1]
+      menus.forEach((ele, index) => {
+        const arr = ele.children.filter(
+          (item:any) => item.name === route.name
+        )
+        if (arr.length > 0) {
+          list = [index]
+        }
+      })
+      return list
+    })
 
-    return { info, simpleRoles, menus }
+    return { info, simpleRoles, menus, activeMenu, openMenuList }
   }
 })
 </script>

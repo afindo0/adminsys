@@ -40,7 +40,6 @@ export default defineComponent({
   setup () {
     const form = {}
     function searchClick () {
-      console.log(1111111)
       // const newform = util.removeEmpty(form)
       // $emit('search', newform)
     }

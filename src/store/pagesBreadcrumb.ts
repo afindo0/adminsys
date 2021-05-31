@@ -12,7 +12,6 @@ export default {
   },
   mutations: {
     setBreadcrumb (state: any, payload: any) {
-      console.log('setBreadcrumb', payload.name)
       const { level } = payload.meta
       const { fromPath = '', name = '' } = payload.query
       const toMatched = payload.matched
